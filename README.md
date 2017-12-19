@@ -3,7 +3,7 @@
 This repository provides a Vim plugin to automate replacing expressions with
 assigned variables in any programming language.
 
--
+<img src="doc/name-assign.gif">
 
 Common in many programming languages, a common editing operation is to move
 subexpressions out of a nested expression into their own assigned names.
@@ -27,8 +27,3 @@ name-assign plugin.
 	let var<Alt = here;
 	...
     call_func(some_code, _visually_mark_the_long_expression_<Alt= here too>);
-
-Here's an animated gif:
-
-__TODO__
-
