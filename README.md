@@ -1,14 +1,20 @@
 # name-assign.vim
 
+## Short introduction
+
 This repository provides a Vim plugin to automate replacing expressions with
 assigned variables in any programming language.
 
+An animated gif is worth a 1,000 words:
+
 <img src="doc/name-assign.gif">
 
-Common in many programming languages, a common editing operation is to move
-subexpressions out of a nested expression into their own assigned names.
+## Description
 
-To illustrate, suppose we have want to transform the following:
+In many programming languages, a common editing operation is to move subexpressions
+out of a nested expression into their own assigned names.
+
+To illustrate, suppose we want to transform the following:
 
     call_func(some_code, some_complex_and_long_expression);
 
@@ -21,9 +27,17 @@ Into the following:
 There can be any amount of lines between the top expression and the variable
 assignment.
 
-We could do those edits manually, or we can use the `Alt =` binding with the
-name-assign plugin.
+## Usage instructions
 
-	let var<Alt = here;
-	...
-    call_func(some_code, _visually_mark_the_long_expression_<Alt= here too>);
+First, note that the default kbd combination is <kbd>Alt</kbd> - <kbd>=</kbd>, and it is bound in normal mode, visual mode and insert mode.
+
+Each usage has three steps:
+
+* Put the key combination at the end of a new variable declaration, right after the name.
+* Perform a visual mark of the expression to replace.
+* Hit the key combination again - see the expression is being replaced by the name and the name is added with the assigned expression.
+
+## Limitations
+
+* Expressions spanning multiple lines are not currently supported.
+* The defaults are not as flexible as they could be. If you want different defaults, look at the last part part of the plugin's source.
