@@ -33,9 +33,11 @@ First, note that the default kbd combination is <kbd>Alt</kbd> - <kbd>=</kbd>, a
 
 Each usage has three steps:
 
-* Put the key combination at the end of a new variable declaration, right after the name.
-* Perform a visual mark of the expression to replace.
+* Press the key combination at the end of a new variable declaration, right after the name.
+* Perform a visual selection of the expression to replace.
 * Hit the key combination again - see the expression is being replaced by the name and the name is added with the assigned expression.
+
+Behind the scenes, the plugin uses the 'k' mark by default in order to save the place in which the selected expression is moved.
 
 ## Limitations
 
