@@ -1,4 +1,4 @@
-# assign-named.vim
+# name-assign.vim
 
 This repository provides a Vim plugin to automate replacing expressions with
 assigned variables in any programming language.
@@ -22,7 +22,7 @@ There can be any amount of lines between the top expression and the variable
 assignment.
 
 We could do those edits manually, or we can use the `Alt =` binding with the
-assign-named plugin.
+name-assign plugin.
 
 	let var<Alt = here;
 	...
