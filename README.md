@@ -3,11 +3,12 @@
 ## Short introduction
 
 This repository provides a Vim plugin to automate replacing expressions with
-assigned variables in any programming language.
+assigned variables in multiple programming language.
 
-An animated gif is worth a 1,000 words:
+An animated Gif is worth a 1,000 words:
 
 <img src="doc/name-assign.gif">
+
 
 ## Description
 
@@ -27,19 +28,26 @@ Into the following:
 There can be any amount of lines between the top expression and the variable
 assignment.
 
+The plugin supports the following languages;
+
+* Rust
+* C/C++
+* VimScript
+
+
 ## Usage instructions
 
-First, note that the default kbd combination is <kbd>Alt</kbd> - <kbd>=</kbd>, and it is bound in normal mode, visual mode and insert mode.
+First, note that the default kbd combination is <kbd>Alt</kbd> - <kbd>=</kbd>, and it is bound in visual mode.
 
-Each usage has three steps:
+Each usage has four steps:
 
-* Press the key combination at the end of a new variable declaration, right after the name.
-* Perform a visual selection of the expression to replace.
-* Hit the key combination again, and see the expression being replaced by the name of the variable, and the declaration is added with the selected expression.
+* Mark the expression to replace with a visual selection.
+* Hit the key combination, pick the name of the expression.
+* Move the assignment line with <kbd>Up</kbd> or <kbd>Down</kbd>.
+* End placing the assignment line with <kbd>Esc<kbd> or <kbd>Return</kbd>.
 
-Behind the scenes, the plugin uses the 'k' mark by default in order to save the place in which the selected expression is moved.
 
-## Limitations
+## TODO
 
-* Expressions spanning multiple lines are not currently supported.
-* The defaults are not as flexible as they could be. If you want different defaults, look at the last part part of the plugin's source.
+* Allow customizing the defaults.
+* Extend support to more languages.
