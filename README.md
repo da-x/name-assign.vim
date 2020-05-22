@@ -44,7 +44,7 @@ Each usage has four steps:
 * Mark the expression to replace with a visual selection.
 * Hit the key combination, pick the name of the expression.
 * Move the assignment line with <kbd>Up</kbd> or <kbd>Down</kbd>.
-* End placing the assignment line with <kbd>Esc<kbd> or <kbd>Return</kbd>.
+* End placing the assignment line with <kbd>Esc</kbd> or <kbd>Return</kbd>.
 
 
 ## TODO
