@@ -48,8 +48,6 @@ Each usage has four steps:
 * Move the assignment line with <kbd>Up</kbd> or <kbd>Down</kbd>.
 * End placing the assignment line with <kbd>Esc</kbd> or <kbd>Return</kbd>.
 
-
 ## TODO
 
-* Allow customizing the defaults.
 * Extend support to more languages.

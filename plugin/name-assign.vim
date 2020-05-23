@@ -32,9 +32,20 @@ let g:name_assign_filetypes = {
   \    },
   \}
 
-if !exists("g:name_assign_no_mappings") || !g:name_assign_no_mappings
-    command! -range -nargs=* NameAssign :<line1>,<line2>call nameassign#Call()
-    vnoremap <A-=> :NameAssign<CR>
+let s:maps_defaults = {
+  \    "up"     : ["<Up>", "k"],
+  \    "down"   : ["<Down>", "j"],
+  \    "settle" : ["<Return>", "<Esc>"],
+  \}
+
+let g:name_assign_mode_maps =
+    \ extend(copy(s:maps_defaults), get(g:, "name_assign_mode_maps", {}))
+
+command! -range -nargs=* NameAssign :<line1>,<line2>call nameassign#Call()
+vnoremap <silent> <Plug>NameAssign :NameAssign<cr>
+
+if !hasmapto('<Plug>NameAssign', 'v') && (mapcheck("<A-=>", "v") == "")
+    vmap <silent> <A-=> <Plug>NameAssign
 endif
 
 " vim: set et sw=4 sts=4 ts=8:

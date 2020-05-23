@@ -19,21 +19,30 @@ function! s:GetVisualSelectionLines() abort
     return lines
 endfunction
 
-function! s:Shift(arg) range abort
-    if a:arg == 0
-        nunmap <buffer> <Esc>
-        nunmap <buffer> <CR>
-        vunmap <buffer> <Esc>
-        vunmap <buffer> <CR>
-        vunmap <buffer> <Up>
-        vunmap <buffer> <Down>
-
-        normal! \<Esc>\<Esc>
-        call setpos(".", [0, b:name_assign_line, 0])
-        normal! $
+function! s:Settle() range abort
+    if !get(b:, "name_assign_mode", v:false)
+        " Not active. This is bizarre.
         return
     endif
 
+    for l:map in get(g:name_assign_mode_maps, "settle", [])
+        exec "nunmap <buffer> ".l:map
+        exec "vunmap <buffer> ".l:map
+    endfor
+    for l:map in get(g:name_assign_mode_maps, "up", [])
+        exec "vunmap <buffer> ".l:map
+    endfor
+    for l:map in get(g:name_assign_mode_maps, "down", [])
+        exec "vunmap <buffer> ".l:map
+    endfor
+    let b:name_assign_mode = v:false
+
+    normal! \<Esc>\<Esc>
+    call setpos(".", [0, b:name_assign_line, 0])
+    normal! $
+endfunction
+
+function! s:Shift(arg) range abort
     if a:arg == 1
         '<,'>move '>+1
     else
@@ -49,6 +58,11 @@ function! nameassign#Call() abort range
         echo "Not supported"
         return
     endif
+    if get(b:, "name_assign_mode", v:false)
+        " Already active. Recursive activation should not happen.
+        return
+    endif
+
     let l:prefix = get(l:filetype_settings, "prefix", "")
     let l:suffix = get(l:filetype_settings, "suffix", "")
 
@@ -107,12 +121,17 @@ function! nameassign#Call() abort range
         endif
     endfor
 
-    nnoremap <silent><buffer> <Esc> :call <SID>Shift(0)<CR>
-    nnoremap <silent><buffer> <CR> :call <SID>Shift(0)<CR>
-    vnoremap <silent><buffer> <Esc> :call <SID>Shift(0)<CR>
-    vnoremap <silent><buffer> <CR> :call <SID>Shift(0)<CR>
-    vnoremap <silent><buffer> <Up> :call <SID>Shift(-1)<CR>
-    vnoremap <silent><buffer> <Down> :call <SID>Shift(1)<CR>
+    let b:name_assign_mode = v:true
+    for l:map in get(g:name_assign_mode_maps, "settle", [])
+        exec "nnoremap <silent><buffer> ".l:map." :call <SID>Settle()<CR>"
+        exec "vnoremap <silent><buffer> ".l:map." :call <SID>Settle()<CR>"
+    endfor
+    for l:map in get(g:name_assign_mode_maps, "up", [])
+        exec "vnoremap <silent><buffer> ".l:map." :call <SID>Shift(-1)<CR>"
+    endfor
+    for l:map in get(g:name_assign_mode_maps, "down", [])
+        exec "vnoremap <silent><buffer> ".l:map." :call <SID>Shift(1)<CR>"
+    endfor
 endfunction
 
 " vim: set et sw=4 sts=4 ts=8:
