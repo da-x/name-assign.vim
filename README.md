@@ -33,6 +33,7 @@ The plugin supports the following languages;
 * Rust
 * C/C++
 * VimScript
+* Python
 
 
 ## Usage instructions
