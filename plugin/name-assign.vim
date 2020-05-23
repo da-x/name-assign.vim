@@ -30,6 +30,9 @@ let g:name_assign_filetypes = {
   \    "python": {
   \        "prefix" : "%s = ",
   \    },
+  \    "go": {
+  \        "prefix" : "%s := ",
+  \    },
   \}
 
 let s:maps_defaults = {

@@ -34,6 +34,7 @@ assignment.
 
 The plugin supports the following languages;
 
+* Go
 * Rust
 * C/C++
 * VimScript
