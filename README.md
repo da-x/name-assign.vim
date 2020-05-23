@@ -77,6 +77,11 @@ Here's the full list of actions:
 * `down` : For moving the placement down
 * `settle` : For ending placement
 
-## TODO
+## To Do
 
 * Extend support to more languages.
+* Allow to customize the content of the `@` register after the operation.
+  Currently it will contain the entered name.
+* Don't liter the undo history too much with the movement, or try to rely on
+  [vim-schlepp](https://github.com/zirrostig/vim-schlepp) that probably does it
+  better.
