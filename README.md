@@ -17,13 +17,17 @@ out of a nested expression into their own assigned names.
 
 To illustrate, suppose we want to transform the following:
 
-    call_func(some_code, some_complex_and_long_expression);
+```c
+call_func(some_code, some_complex_and_long_expression);
+```
 
 Into the following:
 
-	let var = some_complex_and_long_expression;
-	...
-    call_func(some_code, var);
+```c
+let var = some_complex_and_long_expression;
+...
+call_func(some_code, var);
+```
 
 There can be any amount of lines between the top expression and the variable
 assignment.
@@ -52,14 +56,14 @@ Each usage has four steps:
 
 The trigger to activate can be set to a different key:
 
-```
+```viml
 vmap <leader>b <Plug>NameAssign
 ```
 
 It is also possible to override mappings done for the placement mode to
 different keys, for example:
 
-```
+```viml
 let g:name_assign_mode_maps = { "up" : ["n"],  "down" : ["N"] }
 ```
 
