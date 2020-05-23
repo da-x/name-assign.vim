@@ -89,6 +89,7 @@ function! nameassign#Call() abort range
     execute "normal! gvd"
     call setpos(".", [0, l:line_a, l:col_a])
     execute "silent normal! i\<C-r>\<C-r>=b:name_assign_text\<CR>\<Esc>"
+    let @@ = b:name_assign_text
 
     let l:index = 0
     for l:line in l:selection
