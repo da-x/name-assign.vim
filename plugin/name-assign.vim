@@ -12,6 +12,10 @@ let g:name_assign_filetypes = {
   \        "prefix" : "let %s = ",
   \        "suffix" : ";",
   \    },
+  \    "javascript": {
+  \        "prefix" : "let %s = ",
+  \        "suffix" : ";",
+  \    },
   \    "vim": {
   \        "prefix" : "let %s = ",
   \    },
