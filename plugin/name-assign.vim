@@ -23,6 +23,9 @@ let g:name_assign_filetypes = {
   \        "prefix" : "%t %s = ",
   \        "suffix" : ";",
   \    },
+  \    "python": {
+  \        "prefix" : "%s = ",
+  \    },
   \}
 
 if !exists("g:name_assign_no_mappings") || !g:name_assign_no_mappings
