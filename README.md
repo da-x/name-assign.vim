@@ -32,14 +32,8 @@ call_func(some_code, var);
 There can be any amount of lines between the top expression and the variable
 assignment.
 
-The plugin supports the following languages;
-
-* Go
-* Rust
-* C/C++
-* VimScript
-* JavaScript
-* Python
+The plugin supports the following languages: Rust, C, C++, Go, VimScript,
+JavaScript, Python, LISP, Scheme, Racket, Clojure.
 
 
 ## Usage instructions
@@ -52,6 +46,7 @@ Each usage has four steps:
 * Hit the key combination, pick the name of the expression.
 * Now in 'placement mode', move the assignment expression with <kbd>Up</kbd> or <kbd>Down</kbd>, or using <kbd>k</kbd> or <kbd>j</kbd>.
 * End placing the assignment with <kbd>Esc</kbd> or <kbd>Return</kbd>.
+
 
 ### Overriding mappings
 
@@ -76,6 +71,7 @@ Here's the full list of actions:
 * `up` : For moving the placement up
 * `down` : For moving the placement down
 * `settle` : For ending placement
+
 
 ## To Do
 
