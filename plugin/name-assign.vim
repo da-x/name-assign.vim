@@ -33,6 +33,22 @@ let g:name_assign_filetypes = {
   \    "go": {
   \        "prefix" : "%s := ",
   \    },
+  \    "lisp": {
+  \        "prefix" : "(let ((%s ",
+  \        "suffix" : ")))",
+  \    },
+  \    "scheme": {
+  \        "prefix" : "(let ((%s ",
+  \        "suffix" : ")))",
+  \    },
+  \    "racket": {
+  \        "prefix" : "(let ([%s ",
+  \        "suffix" : "]))",
+  \    },
+  \    "clojure": {
+  \        "prefix" : "(let [%s ",
+  \        "suffix" : "])",
+  \    },
   \}
 
 let s:maps_defaults = {
