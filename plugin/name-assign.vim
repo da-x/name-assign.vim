@@ -12,6 +12,18 @@ let g:name_assign_filetypes = {
   \        "prefix" : "let %s = ",
   \        "suffix" : ";",
   \    },
+  \    "erlang": {
+  \        "prefix" : "%s = " 
+  \    },
+  \    "elixir": {
+  \        "prefix" : "%s = " 
+  \    },
+  \    "haskell": {
+  \        "prefix" : "%s = " 
+  \    },
+  \    "purescript": {
+  \        "prefix" : "%s = " 
+  \    },
   \    "javascript": {
   \        "prefix" : "let %s = ",
   \        "suffix" : ";",
