@@ -33,7 +33,7 @@ There can be any amount of lines between the top expression and the variable
 assignment.
 
 The plugin supports the following languages: Rust, C, C++, Go, VimScript,
-JavaScript, Python, LISP, Scheme, Racket, Clojure, Erlang, Elixir, Haskell and
+JavaScript, TypeScript, Python, LISP, Scheme, Racket, Clojure, Erlang, Elixir, Haskell and
 PureScript.
 
 

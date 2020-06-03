@@ -28,6 +28,14 @@ let g:name_assign_filetypes = {
   \        "prefix" : "let %s = ",
   \        "suffix" : ";",
   \    },
+  \    "typescript": {
+  \        "prefix" : "let %s = ",
+  \        "suffix" : ";",
+  \    },
+  \    "typescriptreact": {
+  \        "prefix" : "let %s = ",
+  \        "suffix" : ";",
+  \    },
   \    "vim": {
   \        "prefix" : "let %s = ",
   \    },
